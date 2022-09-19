@@ -1,14 +1,14 @@
 {
   "en": {
     "myBlocks.name": "My Blocks",
-    "myBlocks.doIt": "do it [SCRIPT]"
+    "myBlocks.playTone": "play [TYPE] wave [FREQ] Hz [DUR] s"
   },
   "ja": {
-    "myBlocks.name": "My Blocks",
-    "myBlocks.doIt": "[SCRIPT] を実行する"
+    "myBlocks.name": "私のブロック",
+    "myBlocks.doIt": "[TYPE] を 周波数 [FREQ] Hz で[DUR] 秒 鳴らす"
   },
   "ja-Hira": {
-    "myBlocks.name": "My Blocks",
-    "myBlocks.doIt": "[SCRIPT] をじっこうする"
+    "myBlocks.name": "わたしのブロック",
+    "myBlocks.doIt": "[TYPE] を しゅうはすう [FREQ] Hz で[DUR] びょう ならす"
   }
 }
