@@ -11,7 +11,7 @@ import blockIcon from './block-icon.png'
  * @returns {string} - message for the locale
  */
 let formatMessage: FormatMessage = (messageData: MessageData): string =>
-  messageData.defaultMessage
+  messageData.defaultMessage ? messageData.defaultMessage : 'default message'
 
 /**
  * Setup format-message for this extension.
@@ -48,7 +48,7 @@ class ExtensionBlocks {
   static get EXTENSION_NAME() {
     return formatMessage({
       id: 'myBlocks.name',
-      defaultMessage: 'My Blocks',
+      default: 'My Blocks',
       description: 'name of the extension'
     })
   }
@@ -138,7 +138,7 @@ class ExtensionBlocks {
           blockAllThreads: false,
           text: formatMessage({
             id: 'myBlocks.playTone',
-            defaultMessage: 'play [TYPE] wave [FREQ] Hz [DUR] s',
+            default: 'play [TYPE] wave [FREQ] Hz [DUR] s',
             description: 'tone'
           }),
           func: 'playTone',

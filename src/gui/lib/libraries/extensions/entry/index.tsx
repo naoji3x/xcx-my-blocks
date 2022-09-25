@@ -13,13 +13,13 @@ import translations from './translations.json'
  * @returns {string} - translated message for the current locale
  */
 let formatMessage: FormatMessage = (messageData: MessageData): string =>
-  messageData.defaultMessage
+  messageData.defaultMessage ? messageData.defaultMessage : 'default message'
 
 const entry = {
   get name() {
     return formatMessage({
       id: 'myBlocks.entry.name',
-      defaultMessage: 'My Blocks',
+      default: 'My Blocks',
       description: 'name of the extension'
     })
   },
@@ -30,7 +30,7 @@ const entry = {
   insetIconURL: insetIconURL,
   get description() {
     return formatMessage({
-      defaultMessage: 'an extension for Xcratch',
+      default: 'an extension for Xcratch',
       description: 'Description for this extension',
       id: 'myBlocks.entry.description'
     })

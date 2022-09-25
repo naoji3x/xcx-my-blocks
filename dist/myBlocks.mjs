@@ -30,14 +30,14 @@ var translations$1 = {
  */
 
 var formatMessage$1 = function formatMessage(messageData) {
-  return messageData.defaultMessage;
+  return messageData.defaultMessage ? messageData.defaultMessage : 'default message';
 };
 
 var entry = {
   get name() {
     return formatMessage$1({
       id: 'myBlocks.entry.name',
-      defaultMessage: 'My Blocks',
+      default: 'My Blocks',
       description: 'name of the extension'
     });
   },
@@ -50,7 +50,7 @@ var entry = {
 
   get description() {
     return formatMessage$1({
-      defaultMessage: 'an extension for Xcratch',
+      default: 'an extension for Xcratch',
       description: 'Description for this extension',
       id: 'myBlocks.entry.description'
     });
@@ -747,7 +747,7 @@ var img = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAA
  */
 
 var formatMessage = function formatMessage(messageData) {
-  return messageData.defaultMessage;
+  return messageData.defaultMessage ? messageData.defaultMessage : 'default message';
 };
 /**
  * Setup format-message for this extension.
@@ -851,7 +851,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           blockAllThreads: false,
           text: formatMessage({
             id: 'myBlocks.playTone',
-            defaultMessage: 'play [TYPE] wave [FREQ] Hz [DUR] s',
+            default: 'play [TYPE] wave [FREQ] Hz [DUR] s',
             description: 'tone'
           }),
           func: 'playTone',
@@ -883,7 +883,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
     get: function get() {
       return formatMessage({
         id: 'myBlocks.name',
-        defaultMessage: 'My Blocks',
+        default: 'My Blocks',
         description: 'name of the extension'
       });
     }
