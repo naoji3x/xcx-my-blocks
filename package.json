@@ -2,10 +2,29 @@
   "name": "xcx-my-blocks",
   "version": "0.0.0",
   "scripts": {
-    "register": "npx xcratch-register --id=myBlocks --gui=../scratch-gui --block=./src/vm/extensions/block --entry=./src/gui/lib/libraries/extensions/entry --core --link --use=extension-support util",
-    "build": "npx xcratch-build --module=myBlocks --gui=../scratch-gui --block=./src/vm/extensions/block --entry=./src/gui/lib/libraries/extensions/entry"
+    "register": "npx xcratch-register --id=myBlocks --gui=../scratch-gui --block=./build/vm/extensions/block --entry=./src/gui/lib/libraries/extensions/entry --core --link --use=extension-support util",
+    "build:xcratch": "npx xcratch-build --module=myBlocks --gui=../scratch-gui --block=./build/vm/extensions/block --entry=./src/gui/lib/libraries/extensions/entry",
+    "build:tsc": "tsc",
+    "build:static": "cpx \"src/vm/**/*.{json,svg,png}\" build/vm",
+    "clean": "rimraf build",
+    "build": "run-s -l clean build:static build:tsc build:xcratch",
+    "watch:tsc": "tsc -w",
+    "watch:static": "cpx \"src/vm/**/*.{json,svg,png}\" build/vm -w",
+    "watch": "run-p watch:**"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "cpx": "^1.5.0",
+    "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.3.0",
+    "eslint-plugin-promise": "^6.0.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.8.3",
     "xcratch-build": "^0.4.0",
     "xcratch-register": "^0.4.2"
   }

@@ -96,6 +96,8 @@ function _createClass(Constructor, protoProps, staticProps) {
  * Types of block
  * @enum {string}
  */
+
+
 var BlockType = {
   /**
    * Boolean reporter with hexagonal shape
@@ -146,6 +148,8 @@ var blockType = BlockType;
  * Block argument types
  * @enum {string}
  */
+
+
 var ArgumentType = {
   /**
    * Numeric value with angle picker
@@ -743,7 +747,7 @@ var img = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAA
  */
 
 var formatMessage = function formatMessage(messageData) {
-  return messageData.defaultMessage;
+  return messageData.defaultMessage ? messageData.defaultMessage : 'default message';
 };
 /**
  * Setup format-message for this extension.
@@ -751,7 +755,7 @@ var formatMessage = function formatMessage(messageData) {
 
 
 var setupTranslations = function setupTranslations() {
-  var localeSetup = formatMessage.setup();
+  var localeSetup = formatMessage.setup && formatMessage.setup();
 
   if (localeSetup && localeSetup.translations[localeSetup.locale]) {
     Object.assign(localeSetup.translations[localeSetup.locale], translations[localeSetup.locale]);
@@ -780,10 +784,12 @@ var ExtensionBlocks = /*#__PURE__*/function () {
 
     _classCallCheck(this, ExtensionBlocks);
 
+    this.audioCtx = new AudioContext();
     /**
      * The Scratch 3.0 runtime.
      * @type {Runtime}
      */
+
     this.runtime = runtime;
 
     if (runtime.formatMessage) {
@@ -796,6 +802,10 @@ var ExtensionBlocks = /*#__PURE__*/function () {
     });
     this.resetAudio();
   }
+  /**
+   * @return {string} - the name of this extension.
+   */
+
 
   _createClass(ExtensionBlocks, [{
     key: "resetAudio",
@@ -870,11 +880,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
     }
   }], [{
     key: "EXTENSION_NAME",
-    get:
-    /**
-     * @return {string} - the name of this extension.
-     */
-    function get() {
+    get: function get() {
       return formatMessage({
         id: 'myBlocks.name',
         default: 'My Blocks',
