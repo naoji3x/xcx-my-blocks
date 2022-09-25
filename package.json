@@ -2,14 +2,14 @@
   "name": "xcx-my-blocks",
   "version": "0.0.0",
   "scripts": {
-    "register": "npx xcratch-register --id=myBlocks --gui=../scratch-gui --block=./build/vm/extensions/block --entry=./src/gui/lib/libraries/extensions/entry --core --link --use=extension-support util",
-    "build:xcratch": "npx xcratch-build --module=myBlocks --gui=../scratch-gui --block=./build/vm/extensions/block --entry=./src/gui/lib/libraries/extensions/entry",
+    "register": "npx xcratch-register --id=myBlocks --gui=../scratch-gui --block=./build/vm/extensions/block --entry=./build/gui/lib/libraries/extensions/entry --core --link --use=extension-support util",
+    "build:xcratch": "npx xcratch-build --module=myBlocks --gui=../scratch-gui --block=./build/vm/extensions/block --entry=./build/gui/lib/libraries/extensions/entry",
     "build:tsc": "tsc",
-    "build:static": "cpx \"src/vm/**/*.{json,svg,png}\" build/vm",
+    "build:static": "cpx \"src/**/*.{json,svg,png}\" build",
     "clean": "rimraf build",
     "build": "run-s -l clean build:static build:tsc build:xcratch",
     "watch:tsc": "tsc -w",
-    "watch:static": "cpx \"src/vm/**/*.{json,svg,png}\" build/vm -w",
+    "watch:static": "cpx \"src/**/*.{json,svg,png}\" build -w",
     "watch": "run-p watch:**"
   },
   "devDependencies": {

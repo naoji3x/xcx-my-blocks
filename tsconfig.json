@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./build/vm",
+    "outDir": "./build",
     "allowJs": true,
     "target": "es6",
     "module": "es6",
@@ -11,5 +11,5 @@
     "resolveJsonModule": true,
     "typeRoots": ["types", "node_modules/@types"]
   },
-  "include": ["./src/vm/**/*", "./types/**/*"]
+  "include": ["./src/**/*", "./types/**/*"]
 }

@@ -37,7 +37,7 @@ var entry = {
   get name() {
     return formatMessage$1({
       id: 'myBlocks.entry.name',
-      default: 'My Blocks',
+      defaultMessage: 'My Blocks',
       description: 'name of the extension'
     });
   },
@@ -747,7 +747,7 @@ var img = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAA
  */
 
 var formatMessage = function formatMessage(messageData) {
-  return messageData.defaultMessage ? messageData.defaultMessage : 'default message';
+  return messageData.defaultMessage;
 };
 /**
  * Setup format-message for this extension.
@@ -851,7 +851,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
           blockAllThreads: false,
           text: formatMessage({
             id: 'myBlocks.playTone',
-            default: 'play [TYPE] wave [FREQ] Hz [DUR] s',
+            defaultMessage: 'play [TYPE] wave [FREQ] Hz [DUR] s',
             description: 'tone'
           }),
           func: 'playTone',
@@ -883,7 +883,7 @@ var ExtensionBlocks = /*#__PURE__*/function () {
     get: function get() {
       return formatMessage({
         id: 'myBlocks.name',
-        default: 'My Blocks',
+        defaultMessage: 'My Blocks',
         description: 'name of the extension'
       });
     }
