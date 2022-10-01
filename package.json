@@ -10,7 +10,9 @@
     "build": "run-s -l clean build:static build:tsc build:xcratch",
     "watch:tsc": "tsc -w",
     "watch:static": "cpx \"src/**/*.{json,svg,png}\" build -w",
-    "watch": "run-p watch:**"
+    "watch": "run-p watch:**",
+    "start:gui": "cd ../scratch-gui && npm run start && cd -",
+    "start": "run-p watch start:gui"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.38.0",

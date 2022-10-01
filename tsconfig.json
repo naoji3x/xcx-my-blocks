@@ -2,14 +2,15 @@
   "compilerOptions": {
     "outDir": "./build",
     "allowJs": true,
-    "target": "es6",
+    "target": "es5",
     "module": "es6",
     "strict": true,
     "jsx": "preserve",
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "typeRoots": ["types", "node_modules/@types"]
+    "typeRoots": ["types", "node_modules/@types"],
+    "lib": ["dom", "es2015.promise", "es5"]
   },
   "include": ["./src/**/*", "./types/**/*"]
 }
